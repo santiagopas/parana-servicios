@@ -1,0 +1,51 @@
+svg#freepik_stories-virus-desinfection:not(.animated) .animable {
+  opacity: 0;
+}
+svg#freepik_stories-virus-desinfection.animated #elyuxp78p8g5j {
+  animation: 1s 1 forwards cubic-bezier(0.36, -0.01, 0.5, 1.38) fadeIn;
+  animation-delay: 0s;
+}
+svg#freepik_stories-virus-desinfection.animated #el0wkoga9056am {
+  animation: 1s 1 forwards cubic-bezier(0.36, -0.01, 0.5, 1.38) fadeIn;
+  animation-delay: 0.5s;
+  opacity: 0;
+}
+svg#freepik_stories-virus-desinfection.animated #freepik--Smoke--inject-35 {
+  animation: 1s 1 forwards cubic-bezier(0.36, -0.01, 0.5, 1.38) fadeIn,
+    1.5s Infinite linear heartbeat;
+  animation-delay: 0s, 1s;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes heartbeat {
+  0% {
+    transform: scale(1);
+  }
+  10% {
+    transform: scale(1.1);
+  }
+  30% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  60% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.animator-hidden {
+  display: none;
+}
