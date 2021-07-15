@@ -74,7 +74,7 @@
 
       <template v-slot:action="{ attrs }">
         <v-btn text v-bind="attrs" @click="snackbar.enabled = false">
-          Fechar
+          Fecha
         </v-btn>
       </template>
     </v-snackbar>

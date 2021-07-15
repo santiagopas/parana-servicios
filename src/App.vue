@@ -58,9 +58,7 @@ export default {
     pricing,
     contact,
   },
-    metaInfo: {
-      title: 'Paraná Servicios.'
-    },
+    
 
   data: () => ({
     fab: null,

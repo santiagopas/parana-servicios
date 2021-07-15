@@ -15,13 +15,13 @@
       </v-card-text>
 
       <v-card-text class="white--text pt-0">
-        Encontranos por nuestras redes sociales.
+        Encontranos en nuestras redes sociales.
       </v-card-text>
 
       <v-divider></v-divider>
 
       <v-card-text class="white--text">
-        {{ new Date().getFullYear() }} — <strong>S P</strong>
+        {{ new Date().getFullYear() }} — <strong>Santiago Pasciullo</strong>
       </v-card-text>
     </v-card>
   </v-footer>
@@ -30,6 +30,7 @@
 <style scoped>
 .v-card {
   width: 100%;
+  		background-image: linear-gradient(45deg, #4b6cb7 10%, #3c38d9 42%, #182848 90%);
 }
 </style>
 
@@ -39,14 +40,6 @@ export default {
     icons: [
       {
         text: "mdi-facebook",
-        link: "",
-      },
-      {
-        text: "mdi-twitter",
-        link: "",
-      },
-      {
-        text: "mdi-linkedin",
         link: "",
       },
       {
