@@ -1,6 +1,6 @@
 <template>
   <section id="hero">
-    <v-parallax dark height="700">
+    <v-parallax dark height="750" class="parallax" id="parallax">
       <v-row align="center" justify="center">
         <v-col cols="10">
           <v-row align="center" justify="center">
@@ -77,17 +77,14 @@
         </v-col>
       </v-row>
       <div class="svg-border-waves">
-        <v-img src="@/assets/img/borderWaves.svg" />
+        <v-img src="../assets/img/borderWaves.svg" />
       </div>
     </v-parallax>
- 
+
     <v-container fluid id="features" class="mt-9">
       <v-row align="center" justify="center">
         <v-col cols="10">
           <v-row align="center" justify="space-around">
-            <!-- <v-col cols="12" class="text-center">
-              <h2 class="font-weight-bold display-2 trabajos">Trabajos</h2>
-            </v-col> -->
             <v-col
               cols="12"
               sm="4"
@@ -277,7 +274,7 @@ export default {
   height: 6rem;
   width: 100%;
   overflow: hidden;
-  rotate: 34deg ;
+  rotate: 34deg;
 }
 
 #hero {
@@ -285,7 +282,7 @@ export default {
 }
 .svg-border-waves img {
   position: absolute;
-  bottom: 0;
+  bottom: none;
   left: 0;
   width: 100%;
   margin-bottom: -2px;
@@ -339,5 +336,9 @@ section {
 .parallax {
   border: none !important;
   border-inline-style: inherit;
+}
+#parallax {
+  border: none !important;
+  border-style: none !important;
 }
 </style>

@@ -70,6 +70,6 @@
 <style scoped>
 
 #about {
-  background-color: #f4f7f5;
+  background-color: #f4f7f5b6;
 }
 </style>

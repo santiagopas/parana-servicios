@@ -7,54 +7,53 @@
             <v-col cols="12" sm="5">
               <h1 class="font-weight-bold display-1">Escribinos</h1>
               <h3 class="font-weight-light mt-3">
-                Ella durmió, al calor de las plagas, y yo desperté, queriendo
-                fumigarla.
+                Estaremos contactandote a la brevedad.
               </h3>
               <h3 class="font-weight-light mt-3">
-                De aquel ratón, de música ligera. <br />
-                Nada nos libra, Paraná queda!🎸🎵 <br>
-                🐭<strong>Bailen putos!</strong>🤘 
-              </h3>
-              <h3 class="font-weight-light mt-3">Teléfono: +54 (341) 153-123234</h3>
-              <h3 class="font-weight-light">
-                Email: contacto@paranafumigaciones.com
+                Teléfono: +54 (341) 153-123234
               </h3>
             </v-col>
+            <!-- aca va el v form -->
             <v-col cols="12" sm="7">
-              <v-form ref="form" v-model="valid" :lazy-validation="lazy">
-                <v-text-field
-                  v-model="name"
-                  :rules="nameRules"
-                  label="Nombre"
-                  required
-                ></v-text-field>
-
-                <v-text-field
-                  v-model="email"
-                  :rules="emailRules"
-                  label="E-mail"
-                  required
-                ></v-text-field>
-
-                <v-textarea
-                  v-model="textArea"
-                  :rules="textAreaRules"
-                  label="Mensaje"
-                  required
-                />
-
-                <v-btn
-                  :disabled="!valid"
-                  color="primary"
-                  :dark="valid"
-                  rounded
-                  block
-                  class="mt-3"
-                  @click="submit"
+              <!-- modify this form HTML and place wherever you want your form -->
+              <v-form>
+                <form
+                  id="my-form"
+                  action="https://formspree.io/f/mrgralep"
+                  method="POST"
                 >
-                  Enviar
-                </v-btn>
+                  <v-text-field
+                    v-model="name"
+                    :rules="nameRules"
+                    label="Nombre"
+                    type="text"
+                    name="name"
+                    required
+                  ></v-text-field>
+
+                  <v-text-field
+                    v-model="email"
+                    :rules="emailRules"
+                    label="E-mail"
+                    type="email"
+                    name="email"
+                    required
+                  ></v-text-field>
+
+                  <v-textarea
+                    v-model="textArea"
+                    :rules="textAreaRules"
+                    label="Mensaje"
+                    type="text"
+                    name="message"
+                    required
+                  />
+                  <div class="cajaBoton">
+                    <v-btn id="my-form-button"> Enviar </v-btn>
+                  </div>
+                </form>
               </v-form>
+              <!-- Place this script at the end of the body tag -->
             </v-col>
           </v-row>
         </v-col>
@@ -81,6 +80,41 @@
   </section>
 </template>
 
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js">
+const $form = document.querySelector("#my-form");
+
+$form.addEventListener("submit", handleSubmit);
+
+async function handleSubmit(event) {
+  event.preventDefault();
+  const form = new FormData(this);
+  const response = await fetch(this.action, {
+    method: this.method,
+    body: form,
+    headers: {
+      Accept: "application/json",
+    },
+  });
+  if (response.ok) {
+    this.reset();
+    swal("Gracias por contactarme", "te escribiré pronto 😃", "success");
+  }
+}
+</script>
+<style>
+.cajaBoton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#my-form-button{
+  background: linear-gradient(to top, #f12711, #f5af19);
+  width: 60%;
+  color: #f4f7f5;
+}
+</style>
+
 <style scoped>
 #contact {
   background-color: #f4f7f5;
@@ -97,8 +131,6 @@
 </style>
 
 <script>
-// import {db} from '@/main'
-
 export default {
   data: () => ({
     icons: ["fa-facebook", "fa-twitter", "fa-linkedin", "fa-instagram"],
@@ -126,22 +158,5 @@ export default {
       color: "",
     },
   }),
-  methods: {
-    submit() {
-      /*db.collection("contactData").add({
-        name: this.name,
-        email: this.email,
-        message: this.textArea
-      }).then(() => {
-        this.snackbar.text = "Mensaje exitosamente enviado"
-        this.snackbar.color = "success"
-        this.snackbar.enabled = true
-      }).catch(() => {
-        this.snackbar.text = "Error al enviar el mensaje"
-        this.snackbar.color = "danger"
-        this.snackbar.enabled = true
-      })*/
-    },
-  },
 };
 </script>

@@ -28,7 +28,7 @@
 
 <style scoped>
 .v-main {
-  background-image: url(../src/assets/imgs/parana-3.jpg);
+  background-image: url(../src/assets/imgs/parana-1.jpg);
   /* background-image: linear-gradient(45deg, #4b6cb7 10%, #3c38d9 42%, #182848 90%); */
   image-rendering: auto;
   background-attachment: fixed;

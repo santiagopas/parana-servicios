@@ -1,7 +1,7 @@
-<svg class="wave" style="pointer-events: none" fill="white" preserveAspectRatio="true" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 75">
+<svg class="wave" style="pointer-events: none" fill="#fcfcfc" preserveAspectRatio="true" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 75">
 	<defs>
 		<clipPath id="a">
-			<rect class="a" width="1920" height="75" />
+			<rect class="a" width="1920" height="750" />
 		</clipPath>
 		<style>
 			.a{fill:none;}
@@ -12,9 +12,9 @@
 	<title>
 		wave
 	</title>
-	<g class="b">
+	<!-- <g class="b">
 		<path class="c" d="M1963,327H-105V65A2647.49,2647.49,0,0,1,431,19c217.7,3.5,239.6,30.8,470,36,297.3,6.7,367.5-36.2,642-28a2511.41,2511.41,0,0,1,420,48" />
-	</g>
+	</g> -->
 	<g class="b">
 		<path class="d" d="M-127,404H1963V44c-140.1-28-343.3-46.7-566,22-75.5,23.3-118.5,45.9-162,64-48.6,20.2-404.7,128-784,0C355.2,97.7,341.6,78.3,235,50,86.6,10.6-41.8,6.9-127,10" />
 	</g>
