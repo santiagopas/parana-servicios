@@ -9,80 +9,88 @@
               <h3 class="font-weight-light mt-3">
                 Estaremos contactandote a la brevedad.
               </h3>
-              <h3 class="font-weight-light mt-3">
-                Teléfono: +54 (341) 153-123234
-              </h3>
+              <a
+                class="button-icon"
+                target="_blank"
+                href="https://wa.me/3416546913"
+              >
+                <v-img
+                  src="(../src/assets/imgs/whatsapp.svg)"
+                  alt="Número de teléfono / Phone number"
+              ></v-img></a>
             </v-col>
-            <!-- aca va el v form -->
             <v-col cols="12" sm="7">
-              <!-- modify this form HTML and place wherever you want your form -->
               <v-form>
                 <form
-                  id="my-form"
                   action="https://formspree.io/f/mrgralep"
                   method="POST"
+                  id="form"
+                  class="form"
                 >
+                  <v-text-field required label="Nombre Completo" name="name">
+                    <label for="name"
+                      >Nombre Completo
+                      <input
+                        type="text"
+                        name="name"
+                        id="name"
+                        placeholder="Ingresa tu nombre"
+                        required
+                      />
+                    </label>
+                  </v-text-field>
                   <v-text-field
-                    v-model="name"
-                    :rules="nameRules"
-                    label="Nombre"
-                    type="text"
-                    name="name"
                     required
-                  ></v-text-field>
-
-                  <v-text-field
-                    v-model="email"
-                    :rules="emailRules"
-                    label="E-mail"
-                    type="email"
+                    label="Correo electrónico"
                     name="email"
-                    required
-                  ></v-text-field>
-
-                  <v-textarea
-                    v-model="textArea"
-                    :rules="textAreaRules"
-                    label="Mensaje"
-                    type="text"
-                    name="message"
-                    required
-                  />
-                  <div class="cajaBoton">
-                    <v-btn id="my-form-button"> Enviar </v-btn>
+                  >
+                    <label for="email"
+                      >Correo electrónico
+                      <input
+                        type="email"
+                        name="email"
+                        id="email"
+                        placeholder="Ingresa tu E-Mail"
+                        required
+                      />
+                    </label>
+                  </v-text-field>
+                  <v-text-field required label="Mensaje" name="message">
+                    <label for="message"
+                      >Mensaje
+                      <textarea
+                        name="message"
+                        id="message"
+                        cols="30"
+                        rows="10"
+                        required
+                      ></textarea>
+                    </label>
+                  </v-text-field>
+                  <div class="btn">
+                    <v-btn
+                      id="my-form-button"
+                      class="button"
+                      type="submit"
+                      @click="submit"
+                      >Enviar Mensaje</v-btn
+                    >
                   </div>
                 </form>
               </v-form>
-              <!-- Place this script at the end of the body tag -->
             </v-col>
           </v-row>
         </v-col>
       </v-row>
     </v-container>
-    <div class="svg-border-waves text-white">
+    <div class="svg-border-waves text-white mt-9">
       <v-img src="~@/assets/img/borderWavesBlue.svg" />
     </div>
-    <v-snackbar
-      v-model="snackbar.enabled"
-      timeout="3000"
-      right
-      top
-      :color="snackbar.color"
-    >
-      {{ snackbar.text }}
-
-      <template v-slot:action="{ attrs }">
-        <v-btn text v-bind="attrs" @click="snackbar.enabled = false">
-          Fecha
-        </v-btn>
-      </template>
-    </v-snackbar>
   </section>
 </template>
 
-
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js">
-const $form = document.querySelector("#my-form");
+<script>
+const $form = document.querySelector("#form");
 
 $form.addEventListener("submit", handleSubmit);
 
@@ -97,66 +105,31 @@ async function handleSubmit(event) {
     },
   });
   if (response.ok) {
-    this.reset();
-    swal("Gracias por contactarme", "te escribiré pronto 😃", "success");
+    this.reset(
+      swal(
+        "Mensaje enviado!",
+        "👷‍♂️ Nos contactaremos lo antes posible.",
+        "success"
+      )
+    );
+    swal(
+      "Mensaje enviado!",
+      "👷‍♂️ Nos contactaremos lo antes posible.",
+      "success"
+    );
+  } else {
+    swal(
+      "Vuelve a intentarlo!",
+      "Algo salió mal, recarga la página y envia nuevamente el mensaje.",
+      "error"
+    );
   }
 }
 </script>
-<style>
-.cajaBoton {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-#my-form-button{
-  background: linear-gradient(to top, #f12711, #f5af19);
-  width: 60%;
-  color: #f4f7f5;
-}
-</style>
-
-<style scoped>
-#contact {
-  background-color: #f4f7f5;
-}
-
-.svg-border-waves .v-image {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 3rem;
-  width: 100%;
-  overflow: hidden;
-}
-</style>
-
 <script>
 export default {
   data: () => ({
-    icons: ["fa-facebook", "fa-twitter", "fa-linkedin", "fa-instagram"],
-    valid: true,
-    name: "",
-    nameRules: [
-      (v) => !!v || "El campo nombre es obligatorio",
-      (v) =>
-        (v && v.length >= 6) || "El nombre precisa tener 6 o más caracterers",
-    ],
-    email: "",
-    emailRules: [
-      (v) => !!v || "El campo nombre es obligatorio",
-      (v) => /.+@.+\..+/.test(v) || "El E-mail precisa ser válido",
-    ],
-    textArea: "",
-    textAreaRules: [
-      (v) => !!v || "El campo texto es obligatorio",
-      (v) => (v && v.length >= 10) || "Mínimo de 10 caracteres",
-    ],
-    lazy: false,
-    snackbar: {
-      enabled: false,
-      text: "",
-      color: "",
-    },
+    icons: ["fa-facebook", "fa-twitter", "fa-linkedin", "fa-instagram"]
   }),
 };
 </script>

@@ -14,7 +14,7 @@
               >Paraná</v-list-item-title
             >
             <v-list-item-subtitle class="blue--text text--draken-4"
-              >Servicios</v-list-item-subtitle
+              >Fumigaciones</v-list-item-subtitle
             >
           </v-list-item-content>
         </v-list-item>
@@ -50,14 +50,14 @@
       :class="{ expand: flat }"
     >
       <v-toolbar-title>
-        <!-- <h1
+         <h1
           class="navT deep-orange--text text--draken-4 font-weight-bold text-h5"
         >
           Paraná
           <span class="navS blue--text text--draken-4 font-weight-bold text-h6"
-            >servicios</span
+            >Fumigaciones</span
           >
-        </h1> -->
+        </h1> 
       </v-toolbar-title>
       <v-spacer />
       <v-app-bar-nav-icon
@@ -95,6 +95,13 @@
   padding-top: 10px;
   display: none;
 }
+
+@media screen and (max-width: 768px) {
+  .navT{
+    display: none;
+  }
+}
+
 
 </style>
 

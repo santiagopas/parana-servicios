@@ -1,0 +1,35 @@
+
+.btn{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+} 
+
+@media screen and (mnx-width:376px) {
+  .form p{
+    text-align: initial;
+  }
+}
+
+.cajaBoton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#my-form-button {
+  background: linear-gradient(45deg, #cc655c, #f57119);
+  width: 60%;
+  color: #f4f7f5;
+}
+#contact {
+  background-color: #f4f7f5b2;
+}
+
+.svg-border-waves .v-image {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3rem;
+  width: 100%;
+  overflow: hidden;
+}
