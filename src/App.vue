@@ -4,8 +4,6 @@
     <v-main class="pt-0">
       <home />
       <about />
-    <!--  <download />
-       <pricing /> -->
       <contact class="pt-9" />
     </v-main>
     <v-scale-transition>
@@ -30,7 +28,6 @@
 <style scoped>
 .v-main {
   background-image: url(../src/assets/imgs/fumigando2K.jpg);
-  /* background-image: linear-gradient(45deg, #4b6cb7 10%, #3c38d9 42%, #182848 90%); */
   image-rendering: auto;
   background-attachment: fixed;
   background-position: center;
@@ -43,8 +40,6 @@ import navigation from "./components/Navigation";
 import foote from "./components/Footer";
 import home from "./components/HomeSection";
 import about from "./components/AboutSection";
-import download from "./components/DownloadSection";
-import pricing from "./components/PricingSection";
 import contact from "./components/ContactSection";
 
 export default {
@@ -55,8 +50,6 @@ export default {
     foote,
     home,
     about,
-    download,
-    pricing,
     contact,
   },
     

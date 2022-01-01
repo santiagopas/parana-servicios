@@ -72,7 +72,7 @@
                       id="my-form-button"
                       class="button"
                       type="submit"
-                      @click="submit"
+                      rounded @click="submit"
                       >Enviar Mensaje</v-btn
                     >
                   </div>

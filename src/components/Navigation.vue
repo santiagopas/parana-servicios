@@ -50,34 +50,28 @@
       :class="{ expand: flat }"
     >
       <v-toolbar-title>
-         <h1
+        <h1
           class="navT deep-orange--text text--draken-4 font-weight-bold text-h5"
         >
           Paraná
           <span class="navS blue--text text--draken-4 font-weight-bold text-h6"
             >Fumigaciones</span
           >
-        </h1> 
+        </h1>
       </v-toolbar-title>
       <v-spacer />
       <v-app-bar-nav-icon
         @click.stop="drawer = !drawer"
-        class="mr-4"
+        class="mr-4  deep-orange--text text--draken-4"
         v-if="isXs"
       />
       <div v-else>
-        <v-btn text @click="$vuetify.goTo('#hero')">
+        <v-btn rounded text @click="$vuetify.goTo('#hero')">
           <span class="mr-2 deep-orange--text text--draken-4">Inicio</span>
         </v-btn>
-        <v-btn text @click="$vuetify.goTo('#features')">
-          <span class="mr-2 deep-orange--text text--draken-4">Trabajos</span>
-        </v-btn>
-        <!-- <v-btn text @click="$vuetify.goTo('#download')">
+        <v-btn rounded text @click="$vuetify.goTo('#features')">
           <span class="mr-2 deep-orange--text text--draken-4">Nosotros</span>
         </v-btn>
-        <v-btn text @click="$vuetify.goTo('#pricing')">
-          <span class="mr-2 deep-orange--text text--draken-4">Info</span>
-        </v-btn> -->
         <v-btn rounded text @click="$vuetify.goTo('#contact')">
           <span class="deep-orange--text text--draken-4">Contacto</span>
         </v-btn>
@@ -97,12 +91,10 @@
 }
 
 @media screen and (max-width: 768px) {
-  .navT{
+  .navT {
     display: none;
   }
 }
-
-
 </style>
 
 <script>
@@ -113,8 +105,6 @@ export default {
     items: [
       ["mdi-home-outline", "Inicio", "#hero"],
       ["mdi-information-outline", "Nosotros", "#features"],
-      // ["mdi-download-box-outline", "Trabajos", "#download"],
-      // ["mdi-currency-usd", "Info", "#pricing"],
       ["mdi-email-outline", "Contacto", "#contact"],
     ],
   }),
